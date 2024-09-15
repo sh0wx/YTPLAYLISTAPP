@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OAuth Redirect</title>
+    <script>
+        // Extract the authorization code from the URL
+        const params = new URLSearchParams(window.location.search);
+        const code = params.get('code');
+
+        // Redirect to the app with the code
+        window.location = `exp://192.168.68.58:8081?code=${code}`;
+    </script>
+</head>
+<body>
+    <p>Redirecting...</p>
+</body>
+</html>
