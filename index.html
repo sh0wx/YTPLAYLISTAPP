@@ -9,8 +9,15 @@
         const params = new URLSearchParams(window.location.search);
         const code = params.get('code');
 
-        // Redirect back to the Expo app with the code
-        window.location = `http://localhost:8081${code}`;
+        if (code) {
+            // Replace 'http://localhost:8081' with your actual Expo development URL
+            const redirectTo = `http://localhost:8081?code=${code}`;
+
+            // Redirect to the Expo app with the code
+            window.location.href = redirectTo;
+        } else {
+            document.body.innerHTML = '<p>Authorization code not found. Please try again.</p>';
+        }
     </script>
 </head>
 <body>
